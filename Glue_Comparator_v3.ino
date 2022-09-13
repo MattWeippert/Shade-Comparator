@@ -16,7 +16,7 @@ int blu;
 int y;
 int u;
 int v;
-int color;
+int shade;
 int count = 0;
 long startTiming = 0;
 long elapsedTime = 0;
@@ -29,25 +29,25 @@ long elapsedTime = 0;
 void getGlueShade() {  
   rgbToYUV();
   if (y < 20)
-  color = 1;
+  shade = 1;
   else if (y <= 23)
-  color = 2;
+  shade = 2;
   else if (23 < y <= 26)
-  color = 3;
+  shade = 3;
   else if (26 < y <= 29)
-  color = 4;
+  shade = 4;
   else if (29 < y <= 32)
-  color = 5;
+  shade = 5;
   else if (32 < y <= 35) 
-  color = 6;
+  shade = 6;
   else if (35 < y <= 38) 
-  color = 7;
+  shade = 7;
   else if (38 < y <= 42) 
-  color = 8;
+  shade = 8;
   else if (42 < y <= 45) 
-  color = 9;
+  shade = 9;
   else if (45 < y <= 48)
-  color = 10;
+  shade = 10;
 }
 
 //Converts RGB colors to YUV, which should remove the impact different thicknesses of gluestick.
@@ -118,7 +118,7 @@ void showDataLCD()
   lcd.setCursor (7,1); 
   lcd.print("        ");
   lcd.setCursor (7,1);  
-  lcd.print(color);
+  lcd.print(shade);
   }
   
 void setup() {
